@@ -29,6 +29,7 @@ setTimeout(() => {
     document.body.style.backgroundColor='black';
     document.body.style.color="white"
     showAlert(" Drak mode has been eniables","success");
+    document.title="Dark mode"
   }
   else{
     setmode('light');
@@ -36,6 +37,7 @@ setTimeout(() => {
     document.body.style.backgroundColor='white'
     document.body.style.color="black"
     showAlert(" list mode has been eniables","success");
+    document.title="light mode"
 
   }
  }  
