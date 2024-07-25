@@ -4,8 +4,23 @@ import Form from './components/Form';
 import About from './components/About'
 import { useState } from 'react';
 import Alerts from './components/Alerts';
+
+
 function App() {
- const [mode,setmode]=useState('light')  
+ const [mode,setmode]=useState('light');
+
+ const [alert , setAlert] = useState (null)
+
+ const showAlert = (messagem , type)=>{
+  setAlert({
+    msg: messagem,
+    type: type
+  })
+  
+}
+setTimeout(() => {
+  setAlert(null);
+},1000);
 
  const toggleMode=()=>{
   if(mode ==='light'){
@@ -13,22 +28,26 @@ function App() {
     console.log("dark")
     document.body.style.backgroundColor='black';
     document.body.style.color="white"
+    showAlert(" Drak mode has been eniables","success");
   }
   else{
     setmode('light');
     console.log('lisht')
     document.body.style.backgroundColor='white'
     document.body.style.color="black"
+    showAlert(" list mode has been eniables","success");
+
   }
  }  
 
   return (
   <>
-   <Navbar about="About" title="textUtile" mode={mode} togglemode={toggleMode} />
-   <Alerts alert="are akert"/>
-
+   <Navbar about="About" title="textUtile" mode={mode} togglemode={toggleMode} />   
+   <Alerts alert={alert ||[]} />
+   
    <div className="container">
-   <Form title="Enter the text to analyze below" mode={mode} />
+   <Form showAlert={showAlert} title="Enter the text to analyze below" mode={mode} />
+
    <div className='my-4'>
    {/* <About mode={mode} /> */}
    </div>

@@ -6,6 +6,8 @@ const click=()=>{
   // console.log("Uppercreate was Clivked"+ text)
   const newtext=text.toUpperCase();
   textuse(newtext);
+  props.showAlert("Converted to Upper Case","Success");
+
 }
 const oncl=(even)=>{
 // console.log("user a checking")
@@ -15,6 +17,7 @@ textuse(even.target.value);
 const LowerCase=()=>{
   let newtext=text.toLocaleLowerCase();
   textuse(newtext);
+  props.showAlert("Converted to Lower Case","Success");
 }
 
   return (
