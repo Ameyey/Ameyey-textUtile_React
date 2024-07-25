@@ -30,6 +30,13 @@ setTimeout(() => {
     document.body.style.color="white"
     showAlert(" Drak mode has been eniables","success");
     document.title="Dark mode"
+
+    // setInterval(() => {
+    //   document.title="install a App"
+    // }, 1000);
+    // setInterval(() => {
+    //   document.title="create Logio"
+    // },1500);
   }
   else{
     setmode('light');
