@@ -1,35 +1,37 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
 
 const [myStyle ,setMystyle]= useState({
     color:'black',
-    backgroundColor:'white',  
+    backgroundColor:'white',
+
 })
 
-const [textmode,updata]=useState("Drea mode")
+const [textmode,updata]=useState("Dreak mode")
  const togglestyle=()=>{
-  if(myStyle.color == 'white'){
+  if(myStyle.color ===   'white'){
     setMystyle({
       color:'black',
       backgroundColor:'white',
 
    })
-   console.log("function are a setmystyle 1")
+  //  console.log("function are a setmystyle 1")
+   updata("Dreak mode");
   }
   else{
     setMystyle({
       color:'white',
       backgroundColor:'black',
     })
-    console.log("function are a setmystyle 2");
+    // console.log("function are a setmystyle 2");
     updata("light mode ");
    
   }
 }
   return (
     <>
-    <div className='container' style={myStyle}>
+    <div className='container' style={myStyle} >
       <div className="accordion" id="accordionExample">
         <h1 className='mx-2'>About as</h1>
     <div className="accordion-item" style={myStyle}>
@@ -70,7 +72,7 @@ const [textmode,updata]=useState("Drea mode")
   </div>
 </div>
 <div>
-  <button className='my-3 btn btn-primary' style={myStyle} onClick={togglestyle}>{textmode}</button>
+  <button className={`my-3 btn btn-${props.mode}`}  onClick={togglestyle} >{textmode}</button>
 </div>
 </div>
 </>

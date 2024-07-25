@@ -21,8 +21,8 @@ const LowerCase=()=>{
     <>
     <div className='container'> 
     <div className="mb-3">
-    <label for="myBox" className="form-label my-3 ">{props.title}</label>
-    <textarea className="form-control" id="exampleFormControlTextarea1"  onChange={oncl} value={text} rows="10" ></textarea>  
+    <label for="myBox" className="form-label my-3">{props.title}</label>
+    <textarea className="form-control" id="exampleFormControlTextarea1" style={{backgroundColor : props.mode === "light" ? "white":"black",color : props.mode ==="light" ?" black" :"white"}} onChange={oncl} value={text} rows="10" ></textarea>  
     <button className="btn btn-primary my-2" onClick={click}>Uppercreate</button>
     <button className='btn btn-primary mx-3' onClick={LowerCase}>LowerCase</button>
     </div>
